@@ -4,15 +4,15 @@
 
 <ul>
   <% @tasks.each() do |task| %>
-    <li><%= task.description() %>
-
-    </li>
-
+    <li><%= task.description() %></li>
   <% end %>
 </ul>
-<%= button_to "Delete Last Item", :action => "delete_last" %>
+
+<p>Create a new task:</p>
 
 <form action="/tasks" method="post">
-    <input id="description" type="text" name="description" placeholder="Task description">
-    <button type="submit">Add task</button>
+  <label for="description">Task Description</label>
+  <input id="description" name="description" type="text">
+
+  <button type="submit">Add task</button>
 </form>
