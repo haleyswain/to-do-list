@@ -2,7 +2,9 @@ require('sinatra')
 require('sinatra/reloader')
 require('./lib/to_do')
 also_reload('lib/**/*.rb')
+require('pg')
 
+DB = PG.connect({:dbname => 'to_do'})
 
 get('/') do
   @tasks = Task.all()
