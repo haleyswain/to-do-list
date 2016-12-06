@@ -1,0 +1,21 @@
+
+<h1><%=@name%></h1>
+
+<ul>
+  <% @tasks.each() do |task| %>
+    <li><%= task.fetch('description') %></li>
+  <% end %>
+</ul>
+
+
+<form action= "/list/<%= @current_list_id %>" method="post">
+  <label for="add_task">Enter a task to add to the list:</label>
+  <input id="add_task" name="add_task" type="text">
+  <button type="submit">Add task</button>
+</form>
+
+<hr>
+
+<div class="container">
+  <a href="/">Home</a>
+</div>
